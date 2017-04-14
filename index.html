@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	
+	
+//	for(var i=1;i<10;i++)
+//	{
+//		setTimeout("alert('i="+i+"')",100);//在下面的执行完成后再执行9次
+//		alert(i)//先执行9次
+//	}
+		//for语句不会因为有setTimeout的存在而停止，
+		//他会跳过setTimeout，setTimeout设定的是100毫秒的延迟，
+		//而for语句执行根本用不了那么长时间所以会先弹出九个alert，
+		//然后才setTimeout中的alert
+		//可以使用递归来解决这个问题
+	var i = 10;
+
+	function al() {
+		i--;
+		if(i > 0) { setTimeout(function() { alert("i=" + i);
+				al() }, 2000) 
+		};
+	}
+	al();
+	
+
+</script>
